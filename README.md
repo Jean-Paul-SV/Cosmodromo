@@ -1,55 +1,82 @@
-# Cosmódromo Zenith
+# Cosmódromo
 
-Landing page turística para el **Cosmódromo Zenith** — donde la humanidad toca las estrellas.
+Sitio web espacial interactivo construido con React, JavaScript y Framer Motion. Desplegado en GitHub Pages.
 
-🌐 **Sitio en vivo:** [jean-paul-sv.github.io/Cosmodromo](https://jean-paul-sv.github.io/Cosmodromo)
+## Vista general
 
----
+Cosmódromo es una experiencia web inmersiva con temática de exploración espacial. Incluye animaciones al hacer scroll, una galería multimedia, sección de lanzamientos y una cuenta regresiva en tiempo real.
 
-## Características
+## Tecnologías
 
-- **Starfield animado** — canvas con 320 estrellas y estrellas fugaces en tiempo real
-- **Liquid glass dorado** — efecto glassmorphism con tinte dorado en cards y botones
-- **Scroll reveal** — texto que se revela palabra por palabra al hacer scroll
-- **Countdowns en vivo** — temporizadores de cuenta regresiva para próximos lanzamientos
-- **Diseño responsivo** — mobile-first con navbar adaptativa
-- **Animaciones fluidas** — Framer Motion en todas las secciones
+- **React** + **JavaScript**
+- **Vite** — entorno de desarrollo
+- **Tailwind CSS** — estilos
+- **Framer Motion** — animaciones
+- **GitHub Pages** — despliegue
 
-## Secciones
+## Componentes principales
 
-1. **Hero** — Fondo de estrellas animado, titular con efecto shimmer dorado
-2. **Historia** — Texto con scroll reveal + estadísticas del cosmódromo
-3. **Experiencias** — 3 paquetes de tour (Aurora €199 / Apogeo €499 / Zenith €999)
-4. **Lanzamientos** — Próximas misiones con countdown en tiempo real
-5. **Galería** — Grid de imágenes con overlay dorado
-6. **CTA Final** — Llamado a la acción con parallax
-7. **Footer** — Links y derechos
-
-## Stack
-
-| Tecnología | Uso |
+| Componente | Descripción |
 |---|---|
-| React 19 + Vite | Framework y bundler |
-| Tailwind CSS v3 | Estilos utilitarios |
-| Framer Motion | Animaciones |
-| Space Grotesk | Fuente principal |
-| Cormorant Garamond | Fuente serif de acento |
+| `Hero` | Pantalla de bienvenida con fondo estrellado animado |
+| `Starfield` | Canvas con campo de estrellas generado proceduralmente |
+| `About` | Sección de misión y contexto del proyecto |
+| `Experiences` | Timeline de hitos espaciales |
+| `Gallery` | Galería de imágenes con layout masonry |
+| `Launches` | Listado de lanzamientos con detalles |
+| `ScrollRevealText` | Texto que aparece progresivamente al hacer scroll |
+| `CTAFinal` | Sección final de llamada a la acción |
+| `Navbar` | Navegación fija con links de sección |
+| `Footer` | Pie de página |
 
-## Desarrollo local
+## Hook personalizado
+
+### `useCountdown`
+
+Cuenta regresiva en tiempo real hacia una fecha objetivo. Retorna `{ days, hours, minutes, seconds }` actualizados cada segundo via `setInterval`.
+
+## Inicio rápido
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Deploy a GitHub Pages
+## Despliegue
+
+El sitio se despliega automáticamente en GitHub Pages. Para build manual:
 
 ```bash
+npm run build
 npm run deploy
 ```
 
-Esto compila el proyecto y publica en la rama `gh-pages` automáticamente.
+## Estructura del proyecto
 
----
+```
+src/
+├── components/
+│   ├── About.jsx
+│   ├── CTAFinal.jsx
+│   ├── Experiences.jsx
+│   ├── Footer.jsx
+│   ├── Gallery.jsx
+│   ├── Hero.jsx
+│   ├── Launches.jsx
+│   ├── Navbar.jsx
+│   ├── ScrollRevealText.jsx
+│   └── Starfield.jsx
+├── hooks/
+│   └── useCountdown.js
+├── App.jsx
+└── main.jsx
+```
 
-© 2026 Cosmódromo Zenith. Todos los derechos reservados.
+## Scripts disponibles
+
+```bash
+npm run dev      # Servidor de desarrollo
+npm run build    # Build de producción
+npm run preview  # Vista previa local
+npm run deploy   # Publicar en GitHub Pages
+```
